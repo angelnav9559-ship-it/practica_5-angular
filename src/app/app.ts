@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AGallegos } from './a-gallegos/a-gallegos';
+import { Component } from '@angular/core';
 import { LPrado } from './l-prado/l-prado';
 
 @Component({
@@ -16,6 +18,12 @@ import { AArguello } from './a-arguello/a-arguello';
 
   selector: 'app-root',
   standalone: true,
+  imports: [AGallegos],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App {}
+
   imports: [LPrado],
   templateUrl: './app.html',
   styleUrl: './app.css'
