@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+    --neon-cyan: #00f3ff;
+    --neon-pink: #ff0055;
+    --neon-yellow: #f3e600;
+    --bg-dark: #05050a;
+    --panel-bg: rgba(10, 10, 26, 0.85);
+    --grid-color: rgba(0, 243, 255, 0.05);
+}
+
+.scanlines {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%, 
+        rgba(0, 0, 0, 0.25) 50%
+    ), linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.03),
+        rgba(0, 255, 0, 0.01),
+        rgba(0, 0, 255, 0.03)
+    );
+    background-size: 100% 4px, 6px 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.container {
+    position: relative;
+    background: var(--panel-bg);
+    border: 2px solid var(--neon-cyan);
+    padding: 3rem 4rem;
+    max-width: 800px;
+    width: 90%;
+    margin: 5rem auto;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.3),
+                inset 0 0 15px rgba(0, 243, 255, 0.2);
+    clip-path: polygon(
+        0 0, 
+        calc(100% - 20px) 0, 
+        100% 20px, 
+        100% 100%, 
+        20px 100%, 
+        0 calc(100% - 20px)
+    );
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    border-width: 0 20px 20px 0;
+    border-style: solid;
+    border-color: var(--neon-pink) var(--bg-dark);
+}
+
+.status-badge {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--neon-yellow);
+    border: 1px dashed var(--neon-yellow);
+    padding: 4px 12px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; text-shadow: 0 0 2px var(--neon-yellow); }
+    100% { opacity: 1; text-shadow: 0 0 10px var(--neon-yellow); }
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px var(--neon-cyan),
+                 2px 2px 0px var(--neon-pink);
+    animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-cyan), var(--neon-pink), transparent);
+    margin: 1.5rem 0;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: 700;
+    color: var(--neon-cyan);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.7);
+}

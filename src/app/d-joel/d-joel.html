@@ -1,0 +1,208 @@
+<p>d-joel works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joel Arriaga | Energy</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #020824;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* FONDO ANIMADO */
+body::before {
+    content: "";
+    position: fixed;
+    inset: -50%;
+    background:
+      radial-gradient(circle, #005eff70, transparent 35%),
+      repeating-conic-gradient(
+        from 0deg,
+        transparent 0deg 35deg,
+        #006aff18 36deg 37deg
+      );
+    animation: energia 15s linear infinite;
+    z-index: -1;
+}
+
+@keyframes energia {
+    to { transform: rotate(360deg); }
+}
+
+/* CONTENIDO */
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 45px 15px;
+}
+
+.top {
+    color: #ffcc00;
+    letter-spacing: 7px;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    animation: aparecer 1s ease;
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+    font-style: italic;
+    font-size: clamp(75px, 15vw, 180px);
+    line-height: 0.95;
+    text-transform: uppercase;
+    text-shadow: 6px 6px 0 #005eff;
+    animation: aparecer 1.2s ease;
+}
+
+h1 span {
+    display: block;
+    color: #ff123e;
+    text-shadow:
+      5px 5px 0 #ffffff,
+      0 0 45px #ff003c80;
+}
+
+.linea {
+    width: 230px;
+    height: 5px;
+    background: #ffcc00;
+    margin: 25px auto;
+    box-shadow: 0 0 25px #ffcc00;
+}
+
+/* PERSONAJE */
+.personaje {
+    position: relative;
+    margin-top: 15px;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.personaje img {
+    width: min(310px, 75vw);
+    mix-blend-mode: screen;
+    filter:
+      drop-shadow(0 0 25px #006aff)
+      drop-shadow(0 0 55px #005eff);
+    transition: .4s;
+}
+
+.personaje img:hover {
+    transform: scale(1.12) rotate(-7deg);
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+.sombra {
+    width: 180px;
+    height: 20px;
+    background: #007bff;
+    border-radius: 50%;
+    filter: blur(18px);
+    animation: pulso 3s infinite;
+}
+
+@keyframes pulso {
+    50% {
+        transform: scale(.65);
+        opacity: .4;
+    }
+}
+
+/* TEXTOS */
+.frase {
+    margin-top: 35px;
+    font-size: 19px;
+    letter-spacing: 5px;
+    font-weight: 800;
+}
+
+.frase span {
+    color: #ffcc00;
+}
+
+footer {
+    margin-top: 45px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #8296c1;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width: 600px) {
+    .frase {
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main class="container">
+
+    <div class="top">
+        ⚡ UNLIMITED ENERGY ⚡
+    </div>
+
+    <h1>
+        JOEL
+        <span>ARRIAGA</span>
+    </h1>
+
+    <div class="linea"></div>
+
+    <div class="personaje">
+        <img src="/public/redbull.png" alt="Red Bull animado">
+    </div>
+
+    <div class="sombra"></div>
+
+    <div class="frase">
+        NO LIMITS. <span>JUST ENERGY.</span>
+    </div>
+
+    <footer>
+        JOEL ARRIAGA © 2026
+    </footer>
+
+</main>
+
+</body>
+</html>
