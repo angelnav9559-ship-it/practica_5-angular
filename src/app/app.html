@@ -1,9 +1,11 @@
-<app-a-gallegos></app-a-gallegos>
-<app-a-arguello />
-<router-outlet />
+<!-- Barra de Navegación del Equipo -->
+<nav style="background: #222; padding: 15px; display: flex; gap: 20px;">
+  <a routerLink="/angel-gallegos" style="color: white; text-decoration: none; font-weight: bold;">Ángel Gallegos</a>
+  <a routerLink="/a-rodriguez" style="color: white; text-decoration: none; font-weight: bold;">A. Rodríguez</a>
+  <a routerLink="/d-joel" style="color: white; text-decoration: none; font-weight: bold;">D. Joel</a>
+</nav>
 
-<app-a-rodriguez />
-<app-l-prado></app-l-prado>
-<app-a-arguello />
-<router-outlet />
-
+<!-- El Contenedor Dinámico de Angular (Obligatorio) -->
+<div style="padding: 20px;">
+  <router-outlet></router-outlet>
+</div>
