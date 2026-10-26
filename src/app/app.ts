@@ -1,3 +1,8 @@
+import { Component } from '@angular/core';
+import { LPrado } from './l-prado/l-prado';
+
+@Component({
+
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ARodriguez } from './a-rodriguez/a-rodriguez';
@@ -8,10 +13,11 @@ import { AArguello } from './a-arguello/a-arguello';
 
 @Component({
   imports: [RouterOutlet, AArguello],
+
   selector: 'app-root',
-  styleUrl: './app.css',
+  standalone: true,
+  imports: [LPrado],
   templateUrl: './app.html',
+  styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('prcatica5');
-}
+export class App {}
