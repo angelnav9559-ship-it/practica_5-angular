@@ -10,7 +10,6 @@ import { AArguello } from './a-arguello/a-arguello';
 @Component({
   selector: 'app-root',
   standalone: true,
-  // Registramos todas las páginas y las herramientas de enrutamiento aquí
   imports: [
     RouterOutlet, 
     RouterLink, 
