@@ -5,6 +5,10 @@ import { LPrado } from './l-prado/l-prado';
 
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ARodriguez } from './a-rodriguez/a-rodriguez';
+
+@Component({
+  imports: [RouterOutlet, ARodriguez],
 import { AArguello } from './a-arguello/a-arguello';
 
 @Component({

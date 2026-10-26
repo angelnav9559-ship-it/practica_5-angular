@@ -1,0 +1,122 @@
+.petal {
+    position: absolute;
+    border-radius: 50% 0 50% 50%;
+    background: linear-gradient(135deg, var(--rose), var(--blush-deep));
+    opacity: 0.5;
+}
+
+.petal.p1 { width: 90px; height: 90px; top: 8%; left: 10%; transform: rotate(25deg); }
+.petal.p2 { width: 50px; height: 50px; bottom: 12%; left: 16%; transform: rotate(-15deg); opacity: 0.35; }
+.petal.p3 { width: 70px; height: 70px; top: 12%; right: 12%; transform: rotate(200deg); }
+.petal.p4 { width: 40px; height: 40px; bottom: 16%; right: 18%; transform: rotate(70deg); opacity: 0.4; }
+
+.card {
+    position: relative;
+    text-align: center;
+    padding: 76px 60px;
+    max-width: 640px;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 28px;
+    box-shadow:
+        0 40px 70px -35px rgba(184, 84, 122, 0.45),
+        0 0 0 1px rgba(231, 162, 184, 0.25);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(217, 168, 108, 0.5);
+    border-radius: 18px;
+    pointer-events: none;
+}
+
+.flourish {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 34px;
+    color: var(--rose-deep);
+    margin-bottom: 6px;
+    line-height: 1;
+}
+
+.monogram {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.4em;
+    color: var(--rose-dark);
+    margin-bottom: 26px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: clamp(2.5rem, 6vw, 3.8rem);
+    line-height: 1.15;
+    margin: 0 0 26px;
+    color: var(--plum);
+    text-wrap: balance;
+}
+
+.ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto 20px;
+}
+
+.ornament .rule {
+    width: 44px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--rose));
+}
+
+.ornament .rule.right {
+    background: linear-gradient(90deg, var(--rose), transparent);
+}
+
+.ornament svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--rose-deep);
+}
+
+.subtitle {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose-dark);
+}
+
+@media (max-width: 520px) {
+    .card {
+        padding: 56px 30px;
+    }
+    .petal {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .card {
+        animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    }
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
